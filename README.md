@@ -1,4 +1,4 @@
-# React Workshop
+# React + Pega Workshop
 
 Deze GitHub repository bevat de slides voor een React workshop.
 
