@@ -1,5 +1,6 @@
 import { mkdir, readFile, rm, writeFile } from 'fs/promises';
 import { dirname, join, resolve } from 'path';
+import { cwd } from 'process';
 import { gzip as gzipCb, type InputType } from 'zlib';
 
 interface ServerEntry {
@@ -14,7 +15,7 @@ interface PrerenderedFile {
 }
 
 export async function prerender({ getRouterPaths, render }: ServerEntry, outDir = 'dist') {
-  const clientPath = resolve(import.meta.dirname, '..', outDir);
+  const clientPath = resolve(cwd(), outDir);
   const htmlPath = resolve(clientPath, 'index.html');
 
   console.log(cyan(`\nPrerendering routes...`));

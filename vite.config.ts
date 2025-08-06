@@ -9,7 +9,7 @@ import {
   vitePluginMuiIcons,
 } from 'wb-slides/vite';
 
-import { prerender } from './src/prerender';
+import { prerender } from './src/ssg/prerender';
 
 export default defineConfig(({ command }): UserConfig => {
   const baseConfig = {
@@ -30,7 +30,7 @@ export default defineConfig(({ command }): UserConfig => {
   return {
     ...baseConfig,
     resolve: {
-      alias: { '/src/main.tsx': '/src/entry-client.tsx' },
+      alias: { '/src/main.tsx': 'src/ssg/entry-client.tsx' },
     },
     environments: {
       client: {
@@ -42,7 +42,7 @@ export default defineConfig(({ command }): UserConfig => {
         build: {
           write: false,
           copyPublicDir: false,
-          rollupOptions: { input: 'src/entry-server.tsx' },
+          rollupOptions: { input: 'src/ssg/entry-server.tsx' },
         },
       },
     },

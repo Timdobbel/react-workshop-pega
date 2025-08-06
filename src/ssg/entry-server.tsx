@@ -8,8 +8,8 @@ import {
 } from 'react-router';
 import { SlidesProvider } from 'wb-slides';
 
-import { routes } from './routes';
-import { slides } from './slides/slides';
+import { routes } from '../slides/routes';
+import { slides } from '../slides/slides';
 
 export function getRouterPaths() {
   const paths = new Set<string>();
