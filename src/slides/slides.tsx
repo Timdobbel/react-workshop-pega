@@ -21,7 +21,7 @@ export const slides = createSlides([
   createTopic({
     title: 'Opdrachten',
     slides: [
-      createSlide({ title: 'Local setup', component: Opdracht00 }),
+      createSlide({ title: 'initiële configuratie', component: Opdracht00 }),
       createSlide({ title: 'Override text field', component: Opdracht01 }),
       createSlide({ title: 'Count characters', component: Opdracht02 }),
       createSlide({ title: 'Homepage widget', component: Opdracht03 }),
