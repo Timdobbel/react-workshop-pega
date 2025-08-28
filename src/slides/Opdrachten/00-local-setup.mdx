@@ -1,0 +1,33 @@
+# Opdracht 00: Lokale Setup
+
+In deze opdracht ga je je lokale omgeving klaarzetten voor het werken met Pega React.
+
+## Stappen
+
+1. **Account kopiëren**
+   - Ga naar [https://dev.rulesmatter.nl/prweb](https://dev.rulesmatter.nl/prweb)
+   - Gebruik het account: `cursus.template@soprasteria.com`
+   - Kopieer de `cursusTemplate OAuth Client Registration`
+   - Klik op **View & Download**
+   - Wijzig de `OperatorID` naar je eigen operator
+   - Klik op **Save**
+
+2. **Lokaal instellen**
+   - Kopieer `.env.local.example` naar `.env.local`
+   - Vervang `CLIENT_ID` en `CLIENT_SECRET` met de juiste waarden uit de download
+
+3. **Onboarding uitvoeren**
+   - Voer uit in de terminal:
+     ```sh
+     yarn app onboarding devauth
+     ```
+   - In Pega:
+     - Open de `OnboardingTemplate` application
+     - Kies **SaveAs** en geef de naam `Onboarding<UserName>`
+     - Pas de URL Alias aan naar `Onboarding<UserName>` en klik op **Save**
+     - Ga naar Operator en kies **Save accesGroupAs**: `Onboarding<UserName>:Administrators`
+     - Ga naar ApplicationName en kies **Create and Open**
+     - Voeg bij Operator de application toe: `OnboardingTim:Administrators` en klik op **Save**
+     - Switch naar de `OnboardingTim` application
+
+> Voltooi deze stappen voordat je aan de volgende opdrachten begint.
