@@ -4,23 +4,43 @@ In deze opdracht ga je je lokale omgeving klaarzetten voor het werken met Pega R
 
 ## Stappen
 
-1. **Account kopiëren**
+1. **Pega Account**
    - Ga naar [https://dev.rulesmatter.nl/prweb](https://dev.rulesmatter.nl/prweb)
-   - Gebruik het account: `cursus.template@soprasteria.com`
-   - Kopieer de `cursusTemplate OAuth Client Registration`
+   - Log in met je `eigen operator`.
+
+     _Indien je nog geen eigen account hebt, gebruik dan het volgende account om in loggen en een eigen account te maken:_
+
+     ```
+     username: cursus.template@soprasteria.com
+     password: <via Slack>
+     ```
+
+2. **OAuth Registration**
+   - Ga naar: `Records` -> `Security` -> `OAuth 2.0 Client Registration`
+   - Kopieer `cursusTemplate` naar `ReactSDK<naam>`
    - Klik op **View & Download**
    - Wijzig de `OperatorID` naar je eigen operator
    - Klik op **Save**
 
-2. **Lokaal instellen**
+3. **Lokaal instellen**
    - Kopieer `.env.local.example` naar `.env.local`
    - Vervang `CLIENT_ID` en `CLIENT_SECRET` met de juiste waarden uit de download
 
-3. **Onboarding uitvoeren**
+4. **Onboarding uitvoeren**
    - Voer uit in de terminal:
+
+     _Alleen de eerste keer:_
+
+     ```sh
+     yarn
+     ```
+
+     Om de applicatie lokaal te starten:
+
      ```sh
      yarn app onboarding devauth
      ```
+
    - In Pega:
      - Open de `OnboardingTemplate` application
      - Kies **SaveAs** en geef de naam `Onboarding<UserName>`
